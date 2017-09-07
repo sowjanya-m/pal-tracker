@@ -15,11 +15,11 @@ public class PalTrackerApplication {
         SpringApplication.run(PalTrackerApplication.class, args);
     }
 
+    @Autowired
+    DataSource dataSource;
+
     @Bean
     public TimeEntryRepository timeEntryRepository() {
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
-
         return new JdbcTimeEntryRepository(dataSource);
     }
 }
