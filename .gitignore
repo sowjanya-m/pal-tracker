@@ -7,3 +7,4 @@ ci/variables.yml
 /bin/
 .classpath
 .project
+/out/*
